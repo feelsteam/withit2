@@ -35,9 +35,9 @@
 			for="password">password</label><input type="password" name="userpwd"
 			class="placeholder" placeholder="password">
 			 <input
-			type="submit" value="회원가입" onclick="javascript:location.href='/longin.do';">
+			type="submit" value="가입하기" onclick="doSubmit()" >
+			
 	</form>
-	 <input
-			type="submit" value="회원가입" onclick="javascript:location.href='/withit/login.do';">
+
 </body>
 </html>
