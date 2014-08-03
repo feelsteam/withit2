@@ -3,6 +3,7 @@ package spring.board.vo;
 public class Board {
 	
 	private String userid;
+	private String userpwd;
 	
 	public String getUserid() {
 		return userid;
@@ -16,7 +17,7 @@ public class Board {
 	public void setUserpwd(String userpwd) {
 		this.userpwd = userpwd;
 	}
-	private String userpwd;
+	
 	
 //	public String getTitle() {
 //		return title;

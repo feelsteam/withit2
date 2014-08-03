@@ -1,43 +1,75 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!doctype html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="style.css" />
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="http://www.modernizr.com/downloads/modernizr-latest.js"></script>
-<script type="text/javascript" src="withit/js/placeholder.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
-<script type="text/javascript">
-	function doSubmit() {
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		if (boardFrm.userid.value == "") {
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 
-			alert("제목을 입력해주세요.");
-			return;
-		}
-		if (boardFrm.userpwd.value == "") {
-			alert("내용을입력해주세요.");
-			return;
-		}
-		boardFrm.submit()
-		alert("가입완료")
-	}
-</script>
+	<link rel="stylesheet" href="css/reset.css" charset="utf-8"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css" charset="utf-8"> <!-- Gem style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+  	
+	<title>Log In &amp; Sign Up Form</title>
 </head>
 <body>
+	<header role="banner">
+		<div id="cd-logo"><a href="#0"><img src="img/cd-logo.svg" alt="Logo"></a></div>
 
-	<form id="boardFrm" action="writeProc.do" method="post">
+		<nav class="main-nav">
+			<ul>
+				<!-- inser more links here -->
+				<li><a class="cd-signup" href="#0">Sign up</a></li>
+			</ul>
+		</nav>
+	</header>
 
-		<label for="username">username</label><input type="text" name="userid"
-			class="placeholder" placeholder="me@tutsplus.com"></br> <label
-			for="password">password</label><input type="password" name="userpwd"
-			class="placeholder" placeholder="password">
-			 <input
-			type="submit" value="가입하기" onclick="doSubmit()" >
-			
-	</form>
+	<div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+		<div class="cd-user-modal-container"> <!-- this is the container wrapper -->
 
+			<ul class="cd-switcher">
+
+					<li><a class="cd-signup" href="#0">회원가입</a></li>
+
+			</ul>
+
+
+
+			<div id="cd-signup"> <!-- sign up form -->
+				<form class="cd-form" action="writeProc.do" method="post">
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">Username</label>
+						<input class="full-width has-padding has-border" name="userid" type="text" placeholder="Username">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p> 
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">Password</label>
+						<input class="full-width has-padding has-border" name="userpwd" type="text"  placeholder="Password">
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="가입하기">
+					</p>
+				</form>
+
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-signup -->
+
+			<a href="#0" class="cd-close-form">Close</a>
+		</div> <!-- cd-user-modal-container -->
+	</div> <!-- cd-user-modal -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/main.js"></script> <!-- Gem jQuery -->
 </body>
 </html>

@@ -116,7 +116,7 @@ public class BoardController {
 		
 		//Ã³¸® ÈÄ redirect
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/list.do");
+		mav.setViewName("redirect:/writeForm2.do");
 		return mav;
 
 	}
