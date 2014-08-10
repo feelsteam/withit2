@@ -9,19 +9,19 @@
 	</select>
 	
 	<insert id="writeProc"  parameterType="java.util.Map">
-	 	insert into springmember(userid,userpwd) values(#{userid},#{userpwd})
+	 	insert into userprofile(username,useremail,userpwd) values(#{username},#{useremail},#{userpwd})
 	</insert>
 	
 	<insert id="writeProc2"  parameterType="spring.board.vo.Board">
-	 	insert into springmember(userid,userpwd) values(#{userid},#{userpwd})
+	 	insert into springmember2(userid,userpwd) values(#{userid},#{userpwd})
 	</insert>
 	
 	<select id="getList" parameterType="java.util.Map" resultType="java.util.HashMap">
-	  select no,userid,userpwd from springmember
+	  select no,username,useremail,userpwd from userprofile
 	</select>	
 	
  	<select id="getUserPwd" parameterType="java.lang.String" resultType="java.lang.String">
-	  select userpwd from springmember where userid = #{userid}
+	  select userpwd from userprofile where useremail = #{useremail}
 	</select>	
 	 
 </mapper>

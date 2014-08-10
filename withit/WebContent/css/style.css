@@ -47,7 +47,8 @@ Main components
 header[role=banner] {
   position: relative;
   height: 50px;
-  background: #343642;
+  background: #FFFFFF;
+  border-top: 8px solid #2B2F30
 }
 header[role=banner] #cd-logo {
   float: left;
@@ -66,6 +67,7 @@ header[role=banner] #cd-logo {
 }
 header[role=banner] #cd-logo img {
   display: block;
+  max-width :70%;
 }
 header[role=banner]::after {
   /* clearfix */
@@ -159,14 +161,17 @@ header[role=banner]::after {
     line-height: normal;
     background: transparent;
   }
-  .main-nav a.cd-signin, .main-nav a.cd-signup {
-    padding: .6em 1em;
+  .main-nav a.cd-signin,img.cd-signup,img.cd-login {
+   
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 50em;
+    cursor:pointer;
+    max-width :60%;
   }
-  .main-nav a.cd-signup {
-    background: #2f889a;
+  .main-nav  img.cd-signup , img.cd-login{
     border: none;
+    cursor: pointer;
+    margin-top: 25px;
   }
 }
 

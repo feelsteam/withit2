@@ -2,14 +2,20 @@ package spring.board.vo;
 
 public class Board {
 	
-	private String userid;
+	private String username;
+	private String useremail;
 	private String userpwd;
-	
-	public String getUserid() {
-		return userid;
+	public String getUsername() {
+		return username;
 	}
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getUseremail() {
+		return useremail;
+	}
+	public void setUseremail(String useremail) {
+		this.useremail = useremail;
 	}
 	public String getUserpwd() {
 		return userpwd;
@@ -18,6 +24,8 @@ public class Board {
 		this.userpwd = userpwd;
 	}
 	
+	
+
 	
 //	public String getTitle() {
 //		return title;

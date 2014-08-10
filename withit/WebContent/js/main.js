@@ -9,9 +9,29 @@ jQuery(document).ready(function($){
 		$forgot_password_link = $form_login.find('.cd-form-bottom-message a'),
 		$back_to_login_link = $form_forgot_password.find('.cd-form-bottom-message a'),
 		$main_nav = $('.main-nav');
-
+	$form_headlogin = $main_nav.find('img').eq(0);
 	//open modal
-	$main_nav.on('click', function(event){
+	$form_headlogin.on('click', function(event){
+
+		// if( $(event.target).is($main_nav) ) {
+		// 	// on mobile open the submenu
+		// 	$(this).children('ul').toggleClass('is-visible');
+
+		// } else {
+		// 	// on mobile close submenu
+		// 	$main_nav.children('ul').removeClass('is-visible');
+		// 	//show modal layer
+			$form_modal.addClass('is-visible');	
+			//show the selected form
+			( $(event.target).is('.cd-login') ) ? login_selected() : signup_selected();
+		//}
+
+	});
+	
+	
+	$form_headsignin = $main_nav.find('img').eq(1);
+	//open modal
+	$form_headsignin.on('click', function(event){
 
 		// if( $(event.target).is($main_nav) ) {
 		// 	// on mobile open the submenu
@@ -94,8 +114,15 @@ jQuery(document).ready(function($){
 
 	//REMOVE THIS - it's just to show error messages 
 	$form_login.find('input[type="submit"]').on('click', function(event){
+		if($('#useremail').val()==''){
 		event.preventDefault();
 		$form_login.find('input[type="email"]').toggleClass('has-error').next('span').toggleClass('is-visible');
+		}
+		else
+			{
+				$(this).submit();
+			}
+		
 	});
 	
 //	$('form').submit(function(){
@@ -109,7 +136,7 @@ jQuery(document).ready(function($){
 //	})
 	$form_signup.find('input[type="submit"]').on('click', function(event){
 		
-		if($('#signup-email').val()==''){
+		if($('#useremail').val()==''){
 		event.preventDefault();
 		$form_signup.find('input[type="email"]').toggleClass('has-error').next('span').toggleClass('is-visible');
 		}else{

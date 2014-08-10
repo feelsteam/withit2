@@ -4,6 +4,9 @@
 	<title> SringBoard</title>
 </head>
 <body>
-아이디와 패스워드가 일치 하지 않습니다.
+<script type="text/javascript">
+alert("아이디와 비밀번호가 일치하지 않습니다");
+</script>
 </body>
+
 </html>

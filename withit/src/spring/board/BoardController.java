@@ -39,7 +39,7 @@ public class BoardController {
 		//로그인 후 로그인 한 아이디를  가지고 온다.
 		String name = principal.getName();
 		
-		model.addAttribute("username", name);
+		model.addAttribute("useremail", name);
 		
 	}
 	
@@ -89,8 +89,8 @@ public class BoardController {
 	public ModelAndView  writeProc(@RequestParam Map<String, Object> paramMap, ModelMap model) throws Throwable{
 
 		//Form 에서 넘어 오는 값  찍기  	paramMap 안에 Form 에서 넘어 오는 값이 있음	
-		System.out.println("title = " + paramMap.get("userid"));
-		System.out.println("content = " + paramMap.get("userpwd"));
+		System.out.println("email = " + paramMap.get("useremail"));
+		System.out.println("pwd = " + paramMap.get("userpwd"));
 		
 		//저장하기 위하여 paramMap 을 넘긴다.
 		int writeCnt = mainService.writeProc(paramMap);
@@ -107,7 +107,7 @@ public class BoardController {
 	@RequestMapping("/writeProc2.do")
 	public ModelAndView writeProc2(@ModelAttribute("board") Board board, ModelMap model) throws Throwable{
 
-		System.out.println("title = " + board.getUserid());
+		System.out.println("title = " + board.getUsername());
 		System.out.println("content = " + board.getUserpwd());
 		
 		int writeCnt = mainService.writeProc2(board);		
